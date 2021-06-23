@@ -54,7 +54,14 @@ $ gcloud functions deploy hello_world --runtime python39 --trigger-http --allow-
 ### Call functions
 
 ```
+$ gcloud functions call hello_world
+```
+
+or using cURL
+
+```
 $ curl -w "\n" $(gcloud functions describe hello_world --format "value(httpsTrigger.url)")
+$ curl -w "\n" $(gcloud functions describe hello_name --format "value(httpsTrigger.url)")?name=Lucas
 ```
 
 ### Delete functions
