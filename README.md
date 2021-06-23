@@ -16,10 +16,6 @@ $ python3 -m flask run --port 8080
 
 ```
 $ curl -w "\n" http://127.0.0.1:8080/
-
-$ curl -w "\n" http://127.0.0.1:8080/hello?name=Lucas
-
-$ curl -w "\n" http://127.0.0.1:8080/powered-by
 ```
 
 ## Google Cloud environment
@@ -59,18 +55,10 @@ $ gcloud functions deploy hello_world --runtime python39 --trigger-http --allow-
 
 ```
 $ curl -w "\n" $(gcloud functions describe hello_world --format "value(httpsTrigger.url)")
-
-$ curl -w "\n" $(gcloud functions describe hello_name --format "value(httpsTrigger.url)")?name=Lucas
-
-$ curl -w "\n" $(gcloud functions describe python_powered --format "value(httpsTrigger.url)")
 ```
 
 ### Delete functions
 
 ```
 $ gcloud functions delete hello_world --quiet
-
-$ gcloud functions delete hello_name --quiet
-
-$ gcloud functions delete python_powered --quiet
 ```
